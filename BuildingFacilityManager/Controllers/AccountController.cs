@@ -5,10 +5,11 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using BuildingFacilityManager.Core.Domain;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using BuildingFacilityManager.Models;
+using BuildingFacilityManager.ViewModels;
 
 namespace BuildingFacilityManager.Controllers
 {
