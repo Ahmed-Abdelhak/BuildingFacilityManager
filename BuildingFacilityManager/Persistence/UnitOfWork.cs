@@ -12,14 +12,18 @@ namespace BuildingFacilityManager.Persistence
     public class UnitOfWork : IUnitOfWork
     {
         private readonly ApplicationDbContext _context;
+        public IBuildingRepository Building { get; private set; }
+        public IStoreyRepository Storey { get; private set; }
         public IAssetRepository Asset { get; private set; }
 
-
+       
         public UnitOfWork(ApplicationDbContext context)
         {
             _context = context;
-            Asset = new AssetRepository(_context); 
-            
+            Asset = new AssetRepository(_context);
+            Building = new BuildingRepository(_context);
+            Storey = new StoreyRepository(_context);
+
         }
 
 

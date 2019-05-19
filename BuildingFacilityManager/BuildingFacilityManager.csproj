@@ -167,12 +167,34 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\Dashboard.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Core\Domain\Building\Building.cs" />
+    <Compile Include="Core\Domain\Building\Storey.cs" />
+    <Compile Include="Core\Repositories\IBuildingRepository.cs" />
+    <Compile Include="Core\Repositories\IStoreyRepository.cs" />
     <Compile Include="Migrations\201904231630514_RepositoryAndUnitOfWork.cs" />
     <Compile Include="Migrations\201904231630514_RepositoryAndUnitOfWork.Designer.cs">
       <DependentUpon>201904231630514_RepositoryAndUnitOfWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905151459032_CreatingBuildingTableAndStoriesTable.cs" />
+    <Compile Include="Migrations\201905151459032_CreatingBuildingTableAndStoriesTable.Designer.cs">
+      <DependentUpon>201905151459032_CreatingBuildingTableAndStoriesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905160247112_EditingNameColumnInStoreyTableFromIntToString.cs" />
+    <Compile Include="Migrations\201905160247112_EditingNameColumnInStoreyTableFromIntToString.Designer.cs">
+      <DependentUpon>201905160247112_EditingNameColumnInStoreyTableFromIntToString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905160330201_RenameStoriesTableToStoreys.cs" />
+    <Compile Include="Migrations\201905160330201_RenameStoriesTableToStoreys.Designer.cs">
+      <DependentUpon>201905160330201_RenameStoriesTableToStoreys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905160334352_CreateStoryesTable.cs" />
+    <Compile Include="Migrations\201905160334352_CreateStoryesTable.Designer.cs">
+      <DependentUpon>201905160334352_CreateStoryesTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Persistence\ApplicationDbContext.cs" />
     <Compile Include="Core\Domain\Asset.cs" />
@@ -188,7 +210,9 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistence\Repositories\AssetRepository.cs" />
+    <Compile Include="Persistence\Repositories\BuildingRepository.cs" />
     <Compile Include="Persistence\Repositories\Repository.cs" />
+    <Compile Include="Persistence\Repositories\StoreyRepository.cs" />
     <Compile Include="Persistence\UnitOfWork.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Core\Domain\IdentityModels.cs" />
@@ -207,6 +231,11 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Dashboard\BuildingBoard.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -252,6 +281,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\Bal7aView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -275,6 +305,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904231630514_RepositoryAndUnitOfWork.resx">
       <DependentUpon>201904231630514_RepositoryAndUnitOfWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905151459032_CreatingBuildingTableAndStoriesTable.resx">
+      <DependentUpon>201905151459032_CreatingBuildingTableAndStoriesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905160247112_EditingNameColumnInStoreyTableFromIntToString.resx">
+      <DependentUpon>201905160247112_EditingNameColumnInStoreyTableFromIntToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905160330201_RenameStoriesTableToStoreys.resx">
+      <DependentUpon>201905160330201_RenameStoriesTableToStoreys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905160334352_CreateStoryesTable.resx">
+      <DependentUpon>201905160334352_CreateStoryesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

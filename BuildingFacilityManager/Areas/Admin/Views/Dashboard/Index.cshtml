@@ -1,0 +1,9 @@
+﻿@model IEnumerable<BuildingFacilityManager.Core.Domain.Building.Building>
+   
+<ul>
+@foreach (var b in Model)
+{
+    <li>@b.Name</li>
+}
+    
+</ul>
